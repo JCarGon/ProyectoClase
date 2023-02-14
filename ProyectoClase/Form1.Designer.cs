@@ -35,7 +35,6 @@
             this.botonColor = new System.Windows.Forms.Button();
             this.datosDisco = new System.Windows.Forms.Button();
             this.salidaDatosDisco = new System.Windows.Forms.TextBox();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.SuspendLayout();
             // 
             // salidaDatosEquipo
@@ -105,19 +104,11 @@
             this.salidaDatosDisco.Size = new System.Drawing.Size(399, 75);
             this.salidaDatosDisco.TabIndex = 6;
             // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(704, 224);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(17, 75);
-            this.vScrollBar1.TabIndex = 7;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.salidaDatosDisco);
             this.Controls.Add(this.datosDisco);
             this.Controls.Add(this.botonColor);
@@ -141,6 +132,5 @@
         private Button botonColor;
         private Button datosDisco;
         private TextBox salidaDatosDisco;
-        private VScrollBar vScrollBar1;
     }
 }
