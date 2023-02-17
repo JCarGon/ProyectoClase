@@ -1,3 +1,4 @@
+using System.Management;
 using System.Net;
 using System.Reflection;
 
@@ -12,13 +13,17 @@ namespace ProyectoClase
 
         private void botonEmpezar_Click(object sender, EventArgs e)
         {
+            salidaDatosEquipo.Text = string.Empty;
+
             getUsuarioEquipo();
             salidaDatosEquipo.TextAlign = HorizontalAlignment.Center;
-            ComprobarPCEnCarga();
+            salidaDatosEquipo.Text += Environment.NewLine + "Sistema Operativo: " + Environment.OSVersion;
+            getGestionRAM();
         }
 
         private void botonIP_Click(object sender, EventArgs e)
         {
+            salidaIP.Text = string.Empty;
             getIP();
         }
 
@@ -27,6 +32,9 @@ namespace ProyectoClase
             salidaDatosEquipo.ResetText();
             salidaDatosDisco.ResetText();
             salidaIP.ResetText();
+            salidaBateria.ResetText();
+            botonColor.BackColor = Color.White;
+            botonColor.ForeColor = Color.Black;
         }
 
         private void botonColor_Click(object sender, EventArgs e)
@@ -62,8 +70,8 @@ namespace ProyectoClase
 
         private void datosDisco_Click(object sender, EventArgs e)
         {
+            salidaDatosDisco.Text = string.Empty;
             salidaDatosDisco.TextAlign = HorizontalAlignment.Center;
-
             getUnidadesDisco();
         }
 
@@ -76,7 +84,7 @@ namespace ProyectoClase
 
             foreach(IPAddress direccion in direcciones)
             {
-            salidaIP.Text += "IP: "+direccion.ToString() + Environment.NewLine;
+                salidaIP.Text += "IP: "+direccion.ToString() + Environment.NewLine;
             }
         }
 
@@ -87,20 +95,45 @@ namespace ProyectoClase
             PropertyInfo[] propiedades = pw.GetProperties();
 
             object? valor = propiedades[0].GetValue(SystemInformation.PowerStatus, null);
-            salidaDatosEquipo.Text += valor.ToString();
+            salidaBateria.Text += valor.ToString();
+
 
             if (valor.ToString() == "Online")
             {
-                pictureBox1.BackColor = Color.Green;
+                cuadroColorBateria.BackColor = Color.Green;
             }
             else
             {
-                pictureBox1.BackColor = Color.Red;
+                cuadroColorBateria.BackColor = Color.Red;
             }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            ComprobarPCEnCarga();
+        }
+
+        private void getGestionRAM()
+        {
+            ObjectQuery objectQuery = new("SELECT * FROM Win32_OperatingSystem");
+            ManagementObjectSearcher managementObject = new(objectQuery);
+
+            ManagementObjectCollection coleccion = managementObject.Get();
+
+            foreach(ManagementObject elemento in coleccion)
+            {
+                decimal memoriaTotal = Math.Round(Convert.ToDecimal(elemento["TotalVisibleMemorySize"]) / (1024 * 1024), 2);
+
+                decimal memoriaLibre = Math.Round(Convert.ToDecimal(elemento["FreePhysicalMemory"]) / (1024 * 1024), 2);
+
+                salidaDatosEquipo.Text += Environment.NewLine + "Memoria Total: " + memoriaTotal
+                    + Environment.NewLine + "Memoria Libre: " + memoriaLibre;
+            }
+        }
+
+        private void ComprobarBateria_Click(object sender, EventArgs e)
+        {
+            salidaBateria.Text = string.Empty;
             ComprobarPCEnCarga();
         }
     }
