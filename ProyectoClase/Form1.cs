@@ -39,8 +39,9 @@ namespace ProyectoClase
 
         private void botonColor_Click(object sender, EventArgs e)
         {
-            Hide();
-            Form2.show();
+            this.Hide();
+            Form form2 = new Form2();
+            form2.Show();
         }
 
         private void getUsuarioEquipo()
@@ -135,6 +136,11 @@ namespace ProyectoClase
         {
             salidaBateria.Text = string.Empty;
             ComprobarPCEnCarga();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
