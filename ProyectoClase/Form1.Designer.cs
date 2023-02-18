@@ -52,6 +52,7 @@
             this.salidaDatosEquipo.Location = new System.Drawing.Point(138, 282);
             this.salidaDatosEquipo.Multiline = true;
             this.salidaDatosEquipo.Name = "salidaDatosEquipo";
+            this.salidaDatosEquipo.ReadOnly = true;
             this.salidaDatosEquipo.Size = new System.Drawing.Size(252, 97);
             this.salidaDatosEquipo.TabIndex = 0;
             // 
@@ -73,7 +74,7 @@
             this.borrar.BackColor = System.Drawing.Color.White;
             this.borrar.Font = new System.Drawing.Font("MS Reference Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.borrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(21)))), ((int)(((byte)(38)))));
-            this.borrar.Location = new System.Drawing.Point(265, 404);
+            this.borrar.Location = new System.Drawing.Point(12, 404);
             this.borrar.Name = "borrar";
             this.borrar.Size = new System.Drawing.Size(101, 34);
             this.borrar.TabIndex = 2;
@@ -97,11 +98,11 @@
             this.botonColor.BackColor = System.Drawing.Color.White;
             this.botonColor.Font = new System.Drawing.Font("MS Reference Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.botonColor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(21)))), ((int)(((byte)(38)))));
-            this.botonColor.Location = new System.Drawing.Point(28, 404);
+            this.botonColor.Location = new System.Drawing.Point(170, 385);
             this.botonColor.Name = "botonColor";
-            this.botonColor.Size = new System.Drawing.Size(104, 34);
+            this.botonColor.Size = new System.Drawing.Size(166, 57);
             this.botonColor.TabIndex = 4;
-            this.botonColor.Text = "Púlsame!";
+            this.botonColor.Text = "Púlsame si quieres una sorpresa :)";
             this.botonColor.UseVisualStyleBackColor = false;
             this.botonColor.Click += new System.EventHandler(this.botonColor_Click);
             // 
@@ -124,6 +125,7 @@
             this.salidaDatosDisco.Location = new System.Drawing.Point(138, 182);
             this.salidaDatosDisco.Multiline = true;
             this.salidaDatosDisco.Name = "salidaDatosDisco";
+            this.salidaDatosDisco.ReadOnly = true;
             this.salidaDatosDisco.Size = new System.Drawing.Size(219, 75);
             this.salidaDatosDisco.TabIndex = 6;
             // 
@@ -146,6 +148,7 @@
             this.salidaIP.Location = new System.Drawing.Point(138, 80);
             this.salidaIP.Multiline = true;
             this.salidaIP.Name = "salidaIP";
+            this.salidaIP.ReadOnly = true;
             this.salidaIP.Size = new System.Drawing.Size(184, 78);
             this.salidaIP.TabIndex = 8;
             this.salidaIP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -165,6 +168,7 @@
             this.salidaBateria.Location = new System.Drawing.Point(688, 68);
             this.salidaBateria.Multiline = true;
             this.salidaBateria.Name = "salidaBateria";
+            this.salidaBateria.ReadOnly = true;
             this.salidaBateria.Size = new System.Drawing.Size(100, 23);
             this.salidaBateria.TabIndex = 10;
             // 
@@ -181,7 +185,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.ImageLocation = "C:\\Users\\jesus\\Desktop\\homer-gif.gif";
+            this.pictureBox1.ImageLocation = "C:\\Users\\Jesus\\Desktop\\homer-gif.gif";
             this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(396, 193);
             this.pictureBox1.Name = "pictureBox1";
