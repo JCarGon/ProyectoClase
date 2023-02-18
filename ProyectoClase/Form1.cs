@@ -39,8 +39,8 @@ namespace ProyectoClase
 
         private void botonColor_Click(object sender, EventArgs e)
         {
-            botonColor.BackColor = Color.Red;
-            botonColor.ForeColor = Color.White;
+            Hide();
+            Form2.show();
         }
 
         private void getUsuarioEquipo()
