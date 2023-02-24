@@ -185,7 +185,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.ImageLocation = "C:\\Users\\Jesus\\Desktop\\homer-gif.gif";
+            this.pictureBox1.ImageLocation = "C:\\Users\\Jesus\\Desktop\\homer.gif";
             this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(396, 193);
             this.pictureBox1.Name = "pictureBox1";
